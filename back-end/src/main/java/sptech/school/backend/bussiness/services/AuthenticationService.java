@@ -1,11 +1,13 @@
-package sptech.school.backend.config.auth;
+package sptech.school.backend.bussiness.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import sptech.school.backend.config.jwt.JwtService;
+import sptech.school.backend.comunication.request.AuthenticationRequest;
+import sptech.school.backend.comunication.response.AuthenticationResponse;
+import sptech.school.backend.comunication.request.RegisterRequest;
 import sptech.school.backend.entities.Token;
 import sptech.school.backend.entities.User;
 import sptech.school.backend.entities.enums.Role;
@@ -42,9 +44,7 @@ public class AuthenticationService {
     authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(
             request.getEmail(),
-            request.getPassword()
-        )
-    );
+            request.getPassword()));
     var user = repository.findByEmail(request.getEmail())
         .orElseThrow();
     var jwtToken = jwtService.generateToken(user);

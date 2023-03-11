@@ -1,4 +1,4 @@
-package sptech.school.backend.config.jwt;
+package sptech.school.backend.bussiness.services;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,8 +19,7 @@ public class LogoutService implements LogoutHandler {
   public void logout(
       HttpServletRequest request,
       HttpServletResponse response,
-      Authentication authentication
-  ) {
+      Authentication authentication) {
     final String authHeader = request.getHeader("Authorization");
     final String jwt;
     if (authHeader == null ||!authHeader.startsWith("Bearer ")) {

@@ -1,4 +1,4 @@
-package sptech.school.backend.config.jwt;
+package sptech.school.backend.bussiness.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -33,8 +33,7 @@ public class JwtService {
 
   public String generateToken(
       Map<String, Object> extraClaims,
-      UserDetails userDetails
-  ) {
+      UserDetails userDetails) {
     return Jwts
         .builder()
         .setClaims(extraClaims)

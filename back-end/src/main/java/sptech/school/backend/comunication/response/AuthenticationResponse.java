@@ -1,4 +1,4 @@
-package sptech.school.backend.config.auth;
+package sptech.school.backend.comunication.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,5 +13,4 @@ import sptech.school.backend.entities.enums.Role;
 public class AuthenticationResponse {
 
   private String token;
-  private Role role;
 }

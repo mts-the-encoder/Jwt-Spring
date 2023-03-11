@@ -1,4 +1,4 @@
-package sptech.school.backend.config.auth;
+package sptech.school.backend.comunication.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
