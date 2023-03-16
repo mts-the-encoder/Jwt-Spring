@@ -6,12 +6,12 @@ import sptech.school.backend.entities.User;
 
 import javax.naming.NotContextException;
 import java.util.List;
+import java.util.Optional;
 
 public interface IUserService {
 
     List<UserResponse> findAll() throws NotContextException;
-    User save(RegisterRequest request);
-    UserResponse findById(Integer id);
-    User update(Integer id, RegisterRequest request);
+    Optional<UserResponse> findByFirstName(String firstName);
+    UserResponse update(Integer id, RegisterRequest request);
     void deleteById(Integer id);
 }
