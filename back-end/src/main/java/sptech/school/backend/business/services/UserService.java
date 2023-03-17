@@ -2,9 +2,8 @@ package sptech.school.backend.business.services;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
-import org.webjars.NotFoundException;
+import sptech.school.backend.business.exceptions.ResourceNotFoundException;
 import sptech.school.backend.business.services.abstractions.IUserService;
 import sptech.school.backend.comunication.request.RegisterRequest;
 import sptech.school.backend.comunication.response.UserResponse;
@@ -23,9 +22,7 @@ public class UserService implements IUserService {
 
     private final ModelMapper modelMapper = new ModelMapper();
     private final IUserRepository repository;
-    private final AuthenticationManager authenticationManager;
 
-    //Fazer a regra de negócio que traz todos
     @Override
     public List<UserResponse> findAll() throws NotContextException {
         var users = this.repository.findAllByRole(Role.ADMIN);
@@ -57,20 +54,24 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public UserResponse update(Integer id, RegisterRequest request) {
+    public Optional<UserResponse> update(Integer id, RegisterRequest request) {
         var user = this.repository.findById(id)
-                .orElseThrow(() -> new NotFoundException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-        modelMapper.map(request, User.class);
+        modelMapper.map(request, user);
         repository.save(user);
 
-        return modelMapper.map(user, UserResponse.class);
+        var response = modelMapper.map(user, UserResponse.class);
+
+        return Optional.of(response);
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void delete(Integer id) {
         var user = this.repository.findById(id)
-                .orElseThrow(() -> new NotFoundException("User not found"));
-        repository.deleteById(user.getId());
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+        this.repository.deleteUser(id);
+        this.repository.deleteById(id);
     }
 }
