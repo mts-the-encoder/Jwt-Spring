@@ -11,6 +11,7 @@ public interface IUserService {
 
     List<UserResponse> findAll() throws NotContextException;
     Optional<UserResponse> findByCompany(String company);
+    Optional<UserResponse> findById(Integer id);
     Optional<UserResponse> update(Integer id, RegisterRequest request);
     void delete(Integer id);
 }

@@ -38,7 +38,16 @@ public class UserService implements IUserService {
     public Optional<UserResponse> findByCompany(String company) {
         var user = this.repository.findByCompany(company);
 
-        var response = modelMapper.map(user, UserResponse.class);
+        var response = this.modelMapper.map(user, UserResponse.class);
+
+        return Optional.of(response);
+    }
+
+    @Override
+    public Optional<UserResponse> findById(Integer id) {
+        var user = this.repository.findById(id);
+
+        var response = this.modelMapper.map(user, UserResponse.class);
 
         return Optional.of(response);
     }
@@ -58,10 +67,10 @@ public class UserService implements IUserService {
         var user = this.repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-        modelMapper.map(request, user);
-        repository.save(user);
+        this.modelMapper.map(request, user);
+        this.repository.save(user);
 
-        var response = modelMapper.map(user, UserResponse.class);
+        var response = this.modelMapper.map(user, UserResponse.class);
 
         return Optional.of(response);
     }

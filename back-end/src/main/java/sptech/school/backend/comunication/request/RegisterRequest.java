@@ -22,6 +22,8 @@ public class RegisterRequest {
   @Pattern(regexp = "^\\(?\\d{2}\\)?[\\s-]?[\\s9]?\\d{4}-?\\d{4}$", message = "invalid phone")
   private String phone;
 
+  private AddressRequest address;
+
   @NotBlank(message = "Email is required")
   @Email(message = "invalid email address")
   private String email;
