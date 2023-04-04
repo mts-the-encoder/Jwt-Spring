@@ -1,4 +1,4 @@
-package sptech.school.backend.entities;
+package sptech.school.backend.domain.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sptech.school.backend.entities.enums.TokenType;
+import sptech.school.backend.domain.enums.TokenType;
 
 @Data
 @Builder

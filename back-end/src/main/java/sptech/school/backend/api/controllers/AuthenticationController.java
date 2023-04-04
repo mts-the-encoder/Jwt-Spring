@@ -1,6 +1,5 @@
-package sptech.school.backend.controllers;
+package sptech.school.backend.api.controllers;
 
-import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

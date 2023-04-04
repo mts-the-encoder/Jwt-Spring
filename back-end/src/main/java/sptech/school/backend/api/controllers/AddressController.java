@@ -1,4 +1,4 @@
-package sptech.school.backend.controllers;
+package sptech.school.backend.api.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -3,12 +3,12 @@ package sptech.school.backend.business.services;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import sptech.school.backend.business.exceptions.ResourceNotFoundException;
+import sptech.school.backend.infrastructure.exceptions.ResourceNotFoundException;
 import sptech.school.backend.business.services.abstractions.IUserService;
 import sptech.school.backend.comunication.request.RegisterRequest;
 import sptech.school.backend.comunication.response.UserResponse;
-import sptech.school.backend.entities.User;
-import sptech.school.backend.entities.enums.Role;
+import sptech.school.backend.domain.entities.User;
+import sptech.school.backend.domain.enums.Role;
 import sptech.school.backend.repositories.IUserRepository;
 
 import javax.naming.NotContextException;

@@ -1,4 +1,4 @@
-package sptech.school.backend.config.jwt;
+package sptech.school.backend.infrastructure.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,4 +1,4 @@
-package sptech.school.backend.entities;
+package sptech.school.backend.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import sptech.school.backend.entities.enums.Role;
+import sptech.school.backend.domain.enums.Role;
 
 @Data
 @Builder

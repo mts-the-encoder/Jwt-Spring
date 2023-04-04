@@ -1,4 +1,4 @@
-package sptech.school.backend.config.security;
+package sptech.school.backend.api.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

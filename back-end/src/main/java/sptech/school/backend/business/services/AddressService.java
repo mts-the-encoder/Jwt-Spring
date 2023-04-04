@@ -3,11 +3,11 @@ package sptech.school.backend.business.services;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import sptech.school.backend.business.exceptions.ResourceNotFoundException;
+import sptech.school.backend.infrastructure.exceptions.ResourceNotFoundException;
 import sptech.school.backend.business.services.abstractions.IAddressService;
 import sptech.school.backend.comunication.request.AddressRequest;
 import sptech.school.backend.comunication.response.AddressResponse;
-import sptech.school.backend.entities.Address;
+import sptech.school.backend.domain.entities.Address;
 import sptech.school.backend.repositories.IAddressRepository;
 
 import java.util.List;

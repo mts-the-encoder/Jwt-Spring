@@ -1,4 +1,4 @@
-package sptech.school.backend.entities;
+package sptech.school.backend.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

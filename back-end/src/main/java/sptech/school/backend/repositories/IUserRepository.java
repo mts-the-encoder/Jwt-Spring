@@ -8,8 +8,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import sptech.school.backend.entities.User;
-import sptech.school.backend.entities.enums.Role;
+import sptech.school.backend.domain.entities.User;
+import sptech.school.backend.domain.enums.Role;
 
 public interface IUserRepository extends JpaRepository<User, Integer> {
 

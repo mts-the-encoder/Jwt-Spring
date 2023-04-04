@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import sptech.school.backend.entities.Token;
+import sptech.school.backend.domain.entities.Token;
 
 public interface ITokenRepository extends JpaRepository<Token, Integer> {
 

@@ -1,4 +1,4 @@
-package sptech.school.backend.business.exceptions;
+package sptech.school.backend.infrastructure.exceptions;
 
 public class ForbiddenException extends RuntimeException {
     public ForbiddenException(String message) {
